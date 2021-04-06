@@ -1,0 +1,9 @@
+models/
+__pycache__/
+results/
+venv/
+events.db-wal
+events.db-shm
+events.db
+rasa.db
+.idea
