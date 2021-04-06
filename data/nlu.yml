@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -16,7 +15,6 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
 - intent: goodbye
   examples: |
     - good afternoon
@@ -30,7 +28,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -39,7 +36,6 @@ nlu:
     - of course
     - that sounds good
     - correct
-
 - intent: deny
   examples: |
     - no
@@ -49,7 +45,6 @@ nlu:
     - don't like that
     - no way
     - not really
-
 - intent: mood_great
   examples: |
     - perfect
@@ -66,7 +61,6 @@ nlu:
     - so so perfect
     - so good
     - so perfect
-
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -83,10 +77,61 @@ nlu:
     - extremly sad
     - so saad
     - so sad
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+- intent: input_name
+  examples: |
+    - My name is [Tom](name)
+    - I am [Jerry](name)
+    - You can call me [Helen](name)
+    - [Cindy](name) is my name.
+    - [John](name)
+    - [Amy](name)
+    - My name is [Jin](name)
+- lookup: name
+  examples: |
+    - Sara
+    - Sheldon
+    - Laura
+    - Nora
+    - Luna
+    - Mia
+    - Jin
+- intent: input_contact_number
+  examples: |
+    - My number is [+4915905318995](contact_number)
+    - My handy number is [015901818995](contact_number)
+    - Telephone number is [0615 1132310](contact_number)
+    - [015905818115](contact_number)
+    - Please call [+49 152 234 33333](contact_number)
+- intent: request_delivery
+  examples: |
+    - Can you send sushi to my place?
+    - sushi delivery please.
+    - I want some sushi delivered to my place.
+    - May I ask for delivery serverice of sushi?
+    - How to request sushi delivery?
+- intent: ask_corona_situation
+  examples: |
+    - tell me the current situation of Covid-19 in [Germany](country)
+    - How is the Covid-19 pandemic in [China](country)
+    - Corona virus situation in [India](country)
+    - How many cases of corona in [UK](country)
+    - Pandemic situation in [Japan](country)
+    - Coronavirus in [Italy](country)
+- intent: ask_weather
+  examples: |
+    - How is the weather today?
+    - What does the weather look like?
+    - tell me the weather?
+    - Is it cold today?
+    - Is it hot today?
+    - Is there rain?
+    - Is it a sunny day?
+- regex: contact_number
+  examples: |
+    - (?:\+?49|0)(?:\s*\d{3}){2}\s*\d{4,10}

@@ -11,3 +11,30 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: ask weather
+  steps:
+  - intent: ask_weather
+  - action: action_get_weather
+
+- rule: ask number of corona cases
+  steps:
+  - intent: ask_corona_situation
+  - action: action_get_corona_cases
+
+- rule: activate form delivery
+  steps:
+  - intent: request_delivery
+  - action: form_delivery
+  - active_loop: form_delivery
+
+- rule: deactivate form delivery
+  condition:
+  - active_loop: form_delivery
+  steps:
+  - action: form_delivery
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  - action: action_send_emails
