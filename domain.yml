@@ -14,11 +14,16 @@ intents:
 - request_delivery
 - ask_corona_situation
 - ask_weather
+- input_city
 entities:
 - name
 - contact_number
 - country
+- city
 slots:
+  city:
+    type: text
+    influence_conversation: true
   contact_number:
     type: text
     influence_conversation: false
@@ -60,10 +65,13 @@ responses:
   utter_submit:
   - text: Hello {name}, your number is {contact_number} and I will now send an email
       to your address {email}.
+  utter_ask_city:
+  - text: Which city are you willing to check?
 actions:
 - action_get_weather
 - action_get_corona_cases
 - action_send_emails
+- action_greet
 forms:
   form_delivery:
     contact_number:

@@ -16,6 +16,8 @@ from actions.utils.request_weather import *
 from actions.utils.request_corona_cases import *
 from actions.utils.send_email import *
 
+from datetime import datetime
+
 class ActionGetWeather(Action):
 
     def name(self) -> Text:
@@ -25,7 +27,7 @@ class ActionGetWeather(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        city = "Darmstadt"
+        city = tracker.get_slot("city")
 
         result = get_weather(city)
 
@@ -75,5 +77,25 @@ class ActionSendEmails(Action):
         email = tracker.get_slot("email")
 
         send_emails(email)
+
+        return []
+
+class ActionGreet(Action):
+
+    def name(self) -> Text:
+        return "action_greet"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        hour = datetime.now().hour
+
+        if hour >= 0 and hour < 11:
+            dispatcher.utter_message("Good Morning!")
+        elif hour >= 11 and hour < 17:
+            dispatcher.utter_message("Good Day!")
+        else:
+            dispatcher.utter_message("Good Evening!")
 
         return []

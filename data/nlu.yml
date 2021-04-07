@@ -125,13 +125,34 @@ nlu:
     - Coronavirus in [Italy](country)
 - intent: ask_weather
   examples: |
-    - How is the weather today?
+    - How is the weather today in [Darmstadt](city)?
     - What does the weather look like?
-    - tell me the weather?
-    - Is it cold today?
-    - Is it hot today?
+    - tell me the weather in [Bonn](city)?
+    - Is it cold today in [Munich](city)?
+    - Is it hot today in [Frankfurt](city)?
     - Is there rain?
     - Is it a sunny day?
+    - Is it cold today?
+    - What is the temperature for today?
+    - Temperature for today in [Paris](city)
+
+- intent: input_city
+  examples: |
+    - I am interested in [Hamburg](city)
+    - what about [Newyork](city)
+    - [Tokyo](city)
+    - [Seoul](city)
+    - I want to see in [Leipzig](city)
+    - I wanna check in [Dresden](city)
+- lookup: city
+  examples: |
+    - Amsterdam
+    - Berlin
+    - Brussels
+    - Budapest
+    - Moscow
+    - Ottawa
+
 - regex: contact_number
   examples: |
     - (?:\+?49|0)(?:\s*\d{3}){2}\s*\d{4,10}
