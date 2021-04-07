@@ -153,6 +153,23 @@ nlu:
     - Moscow
     - Ottawa
 
+- intent: input_time
+  examples: |
+    - how about today?
+    - We can make it on Monday.
+    - I can go at 11:45am
+    - It is about three months ago.
+    - from 9:30 - 11:00 on Thursday
+    - we met on the day before labor day 2020
+
+- intent: input_email
+  examples: |
+    - my email address is abcd@gmail.com
+    - Contact me via email jeir912@outlook.com
+    - Reach me by max.mustermann1966@gmail.com
+    - kirsa.sommer29@yahoo.com
+    - bernd.schneider14@yahoo.com
+
 - regex: contact_number
   examples: |
     - (?:\+?49|0)(?:\s*\d{3}){2}\s*\d{4,10}
