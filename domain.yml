@@ -74,8 +74,8 @@ responses:
   utter_ask_email:
   - text: What is your email address?
   utter_submit:
-  - text: "Hello {name}, Here is your oder:\n-Your number is {contact_number}\n-Your\
-      \ email address is {email}\n-Your oder will be delivered on {delivered_time}\n\
+  - text: "Hello {name}, Here is your oder:\n- Your number is {contact_number}\n- Your\
+      \ email address is {email}\n- Your oder will be delivered on {delivered_time}\n\
       Besides, I will now send you an email."
   utter_ask_city:
   - text: Which city are you willing to check?
