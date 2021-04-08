@@ -144,6 +144,7 @@ nlu:
     - [Seoul](city)
     - I want to see in [Leipzig](city)
     - I wanna check in [Dresden](city)
+
 - lookup: city
   examples: |
     - Amsterdam
@@ -161,6 +162,13 @@ nlu:
     - It is about three months ago.
     - from 9:30 - 11:00 on Thursday
     - we met on the day before labor day 2020
+    - in 20 minutes
+    - tomorrow morning at 10
+    - today at 19
+    - 10am in 2 days
+    - this afternoon at 5
+    - 13 o'clock
+
 
 - intent: input_email
   examples: |

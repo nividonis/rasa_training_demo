@@ -14,6 +14,11 @@ pipeline:
      analyzer: char_wb
      min_ngram: 1
      max_ngram: 4
+   - name: "DucklingEntityExtractor"
+     url: "http://localhost:8000"
+     dimensions: ["time", "email"]
+     timezone: "Europe/Berlin"
+     timeout: 3
    - name: DIETClassifier
      epochs: 100
    - name: EntitySynonymMapper
@@ -22,11 +27,7 @@ pipeline:
    - name: FallbackClassifier
      threshold: 0.3
      ambiguity_threshold: 0.1
-   - name: "DucklingEntityExtractor"
-     url: "http://localhost:8000"
-     dimensions: ["time", "email"]
-     timezone: "Europe/Berlin"
-     timeout: 3
+
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
