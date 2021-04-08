@@ -1,8 +1,8 @@
 import smtplib
 from email.message import EmailMessage
 
-EMAIL_ADDRESS = "helix.mcpd@gmail.com"
-EMAIL_PASSWORD = "#helix2020axx!"
+EMAIL_ADDRESS = "xxxxxx"
+EMAIL_PASSWORD = "xxxxxx"
 
 
 def send_emails(recipient_address):
