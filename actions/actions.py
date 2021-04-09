@@ -7,6 +7,7 @@
 
 # This is a simple example for a custom action which utters "Hello World!"
 
+from datetime import datetime
 from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
@@ -77,3 +78,27 @@ class ActionSendEmails(Action):
         send_emails(email)
 
         return []
+
+
+class ActionSayHi(Action):
+
+    def name(self) -> Text:
+        return "action_greet"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        now =  datetime.now()
+
+        if now.hour >= 0 and now.hour <= 12:
+            msg = "Good morning"
+        elif now.hour >= 12 and now.hour <=16:
+            msg = "Good day"
+        else:
+            msg = "Good evening"
+
+        dispatcher.utter_message(msg)
+
+        return []
+

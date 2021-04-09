@@ -64,6 +64,7 @@ actions:
 - action_get_weather
 - action_get_corona_cases
 - action_send_emails
+- action_greet
 forms:
   form_delivery:
     contact_number:
